@@ -1,0 +1,36 @@
+{
+  "name": "cgs-sudoku-solver",
+  "version": "0.0.1",
+  "description": "A project to play around with the Sudoku Solver API from RapidAPI to test my JavaScript skills.",
+  "main": "index.js",
+  "source": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CGlinka95/CGs-Sudoku-Solver.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Sudoku",
+    "Solver",
+    "API",
+    "RapidAPI",
+    "Game"
+  ],
+  "author": "Christopher Glinka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CGlinka95/CGs-Sudoku-Solver/issues"
+  },
+  "homepage": "https://github.com/CGlinka95/CGs-Sudoku-Solver#readme",
+  "dependencies": {
+    "parcel": "^2.7.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}
