@@ -2,7 +2,7 @@ const sudokuBoard = document.querySelector("#sudoku");
 const solveButton = document.querySelector("#solve-button");
 const solutionDisplay = document.querySelector("#solution");
 const squares = 81;
-const submit = [];
+let submit = [];
 
 for (let i = 0; i < squares; i++) {
   const inputElement = document.createElement("input");
@@ -40,7 +40,7 @@ const populateValues = (isSolvable, solution) => {
     inputs.forEach((input, i) => {
       input.value = solution[i];
     });
-    solutionDisplay.innerHTML = "This is the answer, my dude: ";
+    solutionDisplay.innerHTML = "This is the answer, my dude";
   } else {
     solutionDisplay.innerHTML = "This is not solvable, my dude";
   }
@@ -48,29 +48,25 @@ const populateValues = (isSolvable, solution) => {
 
 const solve = () => {
   joinValues();
-  const data = submit.join("");
+  const data = { numbers: submit.join("") };
   console.log("data", data);
-  const options = {
-    method: "POST",
-    url: "https://solve-sudoku.p.rapidapi.com/",
-    headers: {
-      "content-type": "application/json",
-      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
-      "X-RapidAPI-Host": "solve-sudoku.p.rapidapi.com",
-    },
-    data: {
-      puzzle: data,
-    },
-  };
 
-  axios
-    .request(options)
-    .then((response) => {
-      console.log(response.data);
-      populateValues(response.data.solvable, response.data.solution);
+  fetch("http://localhost:8000/solve", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      populateValues(data.solvable, data.solution);
+      submit = [];
     })
     .catch((error) => {
-      console.error(error);
+      console.error("Error:", error);
     });
 };
 

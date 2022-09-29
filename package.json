@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel",
+    "start:backend": "nodemon js/server/server.js",
     "build": "parcel build"
   },
   "repository": {
@@ -28,6 +29,11 @@
   },
   "homepage": "https://github.com/CGlinka95/CGs-Sudoku-Solver#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20",
     "parcel": "^2.7.0"
   },
   "devDependencies": {
