@@ -25,18 +25,16 @@
   font-size: 1.2rem;
   letter-spacing: 0.5rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
-  margin: 1rem 0 0 12.3rem;
   border-radius: 5px;
   border: none;
 }
 
 #solve-button:hover {
-  background-color: rgb(251, 98, 43);
   cursor: pointer;
 }
 
 body {
-  background-color: #00bd9d;
+  background-color: rgb(0, 189, 157);
 }
 
 h1 {
@@ -59,15 +57,16 @@ span {
   font-weight: lighter;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
 li {
   color: #fffbfa;
   font-size: 1.3rem;
   line-height: 2.5rem;
+}
+
+li span {
+  color: #246eb9;
+  font-size: 1.3rem;
+  letter-spacing: 0;
 }
 
 p {
@@ -79,5 +78,5 @@ p {
 .flex-container {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
 }

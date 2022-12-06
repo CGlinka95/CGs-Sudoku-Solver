@@ -40,9 +40,9 @@ const populateValues = (isSolvable, solution) => {
     inputs.forEach((input, i) => {
       input.value = solution[i];
     });
-    solutionDisplay.innerHTML = "This is the answer, my dude";
+    solutionDisplay.innerHTML = "I've solved the puzzle, my dude";
   } else {
-    solutionDisplay.innerHTML = "This is not solvable, my dude";
+    solutionDisplay.innerHTML = "This puzzle is invalid, my dude";
   }
 };
 

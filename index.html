@@ -5,32 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CGs Sudoku Solver</title>
-    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <script type="module" src="js/index.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Sudoku Solver <span>my dude</span></h1>
+      <h1>CG's Sudoku Solver, <span>my dude</span></h1>
     </header>
     <main>
       <div class="flex-container">
         <div id="sudoku"></div>
         <div>
           <h2>Instructions</h2>
-          <ul role="list">
+          <ol role="list">
             <li>Click on a square to input a value between 1 and 9.</li>
-            <li>Once finished, click solve and let the solver do the rest.</li>
+            <li>Once the puzzle is complete, click the solve button.</li>
             <li>
-              The application will prompt yoy if the puzzle is unsolvable.
+              The application will take a few seconds to solve the puzzle.
             </li>
-            <li>To input a new puzzle just click refresh.</li>
-          </ul>
+            <li>
+              If the puzzle is invalid, a message will display below to say so.
+            </li>
+            <li>
+              If the puzzle is valid, a success message will be displayed.
+            </li>
+            <li>To input a new puzzle, click the browser's refresh button.</li>
+            <li>Enjoy, <span>my dude!</span></li>
+          </ol>
+          <button id="solve-button">Solve</button>
           <p id="solution"></p>
         </div>
       </div>
-      <button id="solve-button">Solve</button>
     </main>
-    <footer></footer>
   </body>
 </html>
