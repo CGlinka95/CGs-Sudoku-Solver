@@ -1,9 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* =============== Variables ==================*/
+
+:root {
+  --background-color: #4e54c8;
+  --sudoku-board-background: #1d1e18;
+  --sudoku-board-odd-section: #01a7c2;
+  --headers-and-list: #f5f9e9;
+  --span-color: #89bbfe;
+  --button-color: #def2c8;
+  --button-lettering-color: #1d1e18;
+}
+
+/* =============== Sudoku Board ==================*/
+
 #sudoku {
   width: 450px;
   height: 450px;
-  background-color: #8bd7d2;
-  padding: 2rem;
+  background-color: var(--button-color);
+  padding: 1rem;
   border-radius: 10px;
+  box-shadow: 10px 10px 8px var(--button-lettering-color);
 }
 
 #sudoku input {
@@ -11,72 +33,226 @@
   height: 50px;
   box-sizing: border-box;
   border-spacing: 0;
-  border: 1px #8bd7d2 solid;
+  border: 1px var(--button-lettering-color) solid;
   border-radius: 5px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-.odd-section {
-  background-color: lightseagreen;
-}
-
-#solve-button {
-  background-color: #246eb9;
-  color: white;
-  font-size: 1.2rem;
-  letter-spacing: 0.5rem;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  border-radius: 5px;
-  border: none;
-}
-
-#solve-button:hover {
+#sudoku input:hover {
+  background-color: var(--button-color);
   cursor: pointer;
 }
 
+/* Chrome, Safari, Edge, Opera */
+#sudoku input::-webkit-outer-spin-button,
+#sudoku input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#sudoku input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.odd-section {
+  background-color: var(--sudoku-board-odd-section);
+}
+
+/* =============== General/Typography ==================*/
+
 body {
-  background-color: rgb(0, 189, 157);
-}
-
-h1 {
-  color: #fffbfa;
-  font-size: 4rem;
-  text-align: center;
-  padding: 2rem 0 2rem 0;
-}
-
-h2 {
-  color: #fffbfa;
-  font-size: 2.3rem;
-}
-
-span {
-  color: #246eb9;
-  font-size: 3rem;
-  letter-spacing: 0.5rem;
-  padding-left: 0.5rem;
-  font-weight: lighter;
-}
-
-li {
-  color: #fffbfa;
-  font-size: 1.3rem;
-  line-height: 2.5rem;
-}
-
-li span {
-  color: #246eb9;
-  font-size: 1.3rem;
-  letter-spacing: 0;
-}
-
-p {
-  color: #fffbfa;
-  font-size: 1.3rem;
-  line-height: 2.5rem;
+  font-family: "Exo", sans-serif;
 }
 
 .flex-container {
   display: flex;
   justify-content: center;
   gap: 3rem;
+}
+
+h1 {
+  color: var(--headers-and-list);
+  font-size: 4rem;
+  text-align: center;
+  padding: 2rem 0 2rem 0;
+  width: 100%;
+}
+
+h2 {
+  color: var(--headers-and-list);
+  font-size: 2.3rem;
+}
+
+span {
+  color: var(--span-color);
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  padding-left: 0.5rem;
+  font-weight: lighter;
+}
+
+p {
+  color: var(--headers-and-list);
+  padding-top: 1rem;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+}
+
+/* =============== Background ==================*/
+
+.area {
+  background: var(--background-color);
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  width: 100%;
+  height: 100vh;
+}
+
+.blocks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.blocks li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.blocks li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.blocks li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.blocks li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.blocks li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.blocks li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.blocks li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.blocks li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.blocks li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.blocks li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.blocks li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+/* =============== Instructions ==================*/
+
+ol {
+  padding: 1.5rem;
+}
+
+li {
+  color: var(--headers-and-list);
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+}
+
+li span {
+  color: var(--span-color);
+  font-size: 1.3rem;
+  letter-spacing: 0;
+}
+
+/* =============== Solve Button ==================*/
+
+#solve-button {
+  background-color: var(--button-color);
+  color: var(--button-lettering-color);
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  transition: ease 1s;
+}
+
+#solve-button:hover {
+  background-color: var(--headers-and-list);
+  cursor: pointer;
+  border: 1px var(--button-lettering-color) solid;
+}
+
+/* =============== Keyframes ==================*/
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
 }
