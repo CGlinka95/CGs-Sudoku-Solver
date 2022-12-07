@@ -12,7 +12,7 @@
   --sudoku-board-background: #1d1e18;
   --sudoku-board-odd-section: #01a7c2;
   --headers-and-list: #f5f9e9;
-  --span-color: #89bbfe;
+  --span-color: #4d9078;
   --button-color: #def2c8;
   --button-lettering-color: #1d1e18;
 }
@@ -66,6 +66,12 @@ body {
   font-family: "Exo", sans-serif;
 }
 
+header {
+  background-color: var(--button-color);
+  margin-bottom: 5rem;
+  box-shadow: 1px 2px 5px var(--button-lettering-color);
+}
+
 .flex-container {
   display: flex;
   justify-content: center;
@@ -73,7 +79,7 @@ body {
 }
 
 h1 {
-  color: var(--headers-and-list);
+  color: var(--background-color);
   font-size: 4rem;
   text-align: center;
   padding: 2rem 0 2rem 0;
@@ -218,7 +224,7 @@ li {
 }
 
 li span {
-  color: var(--span-color);
+  color: var(--sudoku-board-odd-section);
   font-size: 1.3rem;
   letter-spacing: 0;
 }
