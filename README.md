@@ -17,5 +17,4 @@ Run 'npm install' in the root of the directory to install all dependancies and t
 
 ## Known Bugs 
 
-- Front end layout is not finished 
-- No known bugs for application functionality
+- No known bugs (12/07/2022)
